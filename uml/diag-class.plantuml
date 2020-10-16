@@ -1,0 +1,40 @@
+@startuml
+title Mediathèque
+
+class Media {
+  title: String
+  releaseDate: Date
+  rating: Number
+  img: String
+}
+
+class Album {
+   artists: String
+   nbTracks: Number
+}
+
+class Game {
+   studio: String
+   nbPlayers: Number
+   plot: String
+}
+
+class Movie {
+   director: String
+   actors: String
+   duration: Number
+   plot: String
+}
+
+class Collection {
+   addMedia (media: Media)
+   removeMedia (media: Media)
+   getNbMedias (): Number
+   filter (filterFn: (media: Media, index: Number) => Boolean): Array<Media>
+}
+
+Media <|-- Album
+Media <|-- Game
+Media <|-- Movie
+Media "*" <-- "1" Collection: medias
+@enduml

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+
+<head lang="fr">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <link rel="stylesheet" href="./public/css/style.css">
+    <script src="./src/main.js" type="module"></script>
+            
+</head>
+        
+<body>
+    <nav>
+        <div class="nav-wrapper red darken-1">
+            <a>Mon bordel</a>
+            <ul id="nav-mobile" class="right hide-on-med-and-down">
+                <li class="filtre active waves-effect waves-light" data-filter="all"><a>Tout voir</a></li>
+                <li class="filtre waves-effect waves-light" data-filter="films"><a>Films</a></li>
+                <li class="filtre waves-effect waves-light" data-filter="jeux"><a>Jeux</a></li>
+                <li class="filtre waves-effect waves-light" data-filter="albums"><a>Albums</a></li>
+                <li id="trier" class="filtre waves-effect waves-light" data-filter="trie"><a>Trier par titre</a></li>        
+                <li id="addMedia" class="waves-effect waves-light modal-trigger" href="#modalAddMedia"><a>Ajouter un media</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section >
+        <div id="cards" class="row">
+            
+        </div>
+    </section>  
+</body>
+
+<!-- Modal Structure -->
+<div id="modalAddMedia" class="modal">
+    <div class="modal-content">
+        <h4>Choisir un media : </h4>
+        <label class="col s4">
+            <input id="radioAlbum" class="with-gap" value="album" name="group" type="radio"/>
+            <span>Album</span>
+        </label>
+        <label class="col s4">
+            <input id="radioJeu" class="with-gap" value="jeu" name="group" type="radio"/>
+            <span>Jeu</span>
+        </label>
+        <label class="col s4">
+            <input id="radioFilm" class="with-gap" value="film" name="group" type="radio"/>
+            <span>Film</span>
+        </label>
+        <label class="col s3">
+            <input id="filmOMDBAPI" class="with-gap" value="filmOMDBAPI" name="group" type="radio"/>
+            <span>filmOMDBAPI</span>
+        </label>
+        <div id="formAddMedia"> <div id="formular"> </div></div>   
+    </div>
+    <div class="modal-footer">
+        <a id="addValide" class="modal-close waves-effect waves-green btn-flat">Valider</a>
+    </div>
+</div>
+
+<div id="modalModifMedia" class="modal">
+    <div class="modal-content">
+        <div id="formModifMedia"></div>
+    </div>
+    <div class="modal-footer">
+        <a id="buttonModifValide" class="modal-close waves-effect waves-green btn-flat">Valider</a>
+    </div>
+</div>
+</html>
+
